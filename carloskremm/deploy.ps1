@@ -2,9 +2,22 @@ $ErrorActionPreference = "Stop"
 
 $imageName = "timkeutel/carloskremm-landingpage:dev"
 
-docker buildx build ../ -f ./Dockerfile --platform linux/arm64/v8 -t $imageName --output=type=registry
-docker image push $imageName
+$project = "CarlosFotografie"
+$piBasePath = "/home/temp"
+
+ssh pi "mkdir $piBasePath"
+ssh pi "cd $piBasePath && rm -r $project"
+ssh pi "cd $piBasePath && git clone https://github.com/TimKeutelWebServices/CarlosFotografie.git"
+ssh pi "cd $piBasePath/$project/carloskremm && docker buildx build ../ -f ./Dockerfile -t $imageName"
+
+<#
+
+#docker buildx build ../ -f ./Dockerfile --platform linux/arm64/v8 -t $imageName --output=type=registry
+#docker image push $imageName
 #
+
+
+
 ssh pi 'docker compose pull'
 ssh pi 'docker compose up -d --no-deps'
 
@@ -27,6 +40,8 @@ if (Test-Path ".env") {
 }
 
 $uri = "https://api.cloudflare.com/client/v4/zones/$Env:CLOUDFLARE_ZONE_ID/purge_cache";
+
+Write-Host "$Env:CLOUDFLARE_EMAIL"
 
 $params = @{
   Uri         = $uri
@@ -54,4 +69,4 @@ Invoke-WebRequest -Uri "$baseUrl/gallery/family" | Out-Null
 Invoke-WebRequest -Uri "$baseUrl/gallery/location" | Out-Null
 Invoke-WebRequest -Uri "$baseUrl/gallery/pets" | Out-Null
 Invoke-WebRequest -Uri "$baseUrl/gallery/portrait" | Out-Null
-Invoke-WebRequest -Uri "$baseUrl/gallery/video" | Out-Null
+Invoke-WebRequest -Uri "$baseUrl/gallery/video" | Out-Null #>

@@ -7,6 +7,7 @@ node_modules
 server.vrt
 server.key
 yarn.lock
+package-lock.json
 
 .gitignore
 README.mdnpm i
