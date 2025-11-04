@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../base"
+		},
+		{
+			"path": "../carloskremm"
+		},
+		{
+			"path": "."
+		}
+	],
+	"files.associations": {
+		"*.env.*": "env"
+	}
+}

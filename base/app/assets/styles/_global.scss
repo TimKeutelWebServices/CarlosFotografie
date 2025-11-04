@@ -1,0 +1,26 @@
+// position
+$spacexl: 4rem;
+$spacel: 2rem;
+$space: 1rem;
+$spaces: 0.5rem;
+$spacexs: 0.25rem;
+
+$navHeight: 2rem;
+$navHeight_double: 4rem;
+$navHeight_quatruple: 8rem;
+$mobileThreshold: 625px;
+$maxWidth: 1200px;
+
+// Color
+$mainBackgroundColor: #f5f0ea;
+$mainBackgroundColorTransperant: #f5f0ea80;
+$akzentColor: #faf6f1;
+$detailColor: #9d9183;
+$detailTextColor: #2c2825;
+$detailColorLight: #d8d0c6;
+$darkFontColor: #6b4325;
+$boxShadow: 3px 3px 8px $detailColor, -1px -1px 5px $akzentColor;
+$backdrop: blur(20px);
+
+// Animation
+$baseTransition: .15s all ease-in-out;

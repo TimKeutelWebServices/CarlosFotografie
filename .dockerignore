@@ -1,0 +1,19 @@
+# Build artifacts
+**/.output
+**/.nuxt
+**/dist
+
+# Dependencies (let Docker rebuild them)
+**/node_modules
+
+# VCS and editor noise
+.git
+.gitignore
+.vscode
+.DS_Store
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Misc
+auxiliary/

@@ -1,0 +1,12 @@
+# .dockerignore
+.nuxt
+.output
+.data
+node_modules
+.vscode
+server.vrt
+server.key
+yarn.lock
+
+.gitignore
+README.mdnpm i
